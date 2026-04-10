@@ -57,6 +57,11 @@ const ActionCards = () => {
         {cards.map((card) => (
           <button
             key={card.route}
+            data-tour={
+              card.route === "/game" ? "quiz-card" : 
+              card.route === "/simulators" ? "simulator-card" : 
+              card.route === "/scam-simulator" ? "scamy-card" : undefined
+            }
             onClick={() => navigate(card.route)}
             className={`${card.bg} rounded-[2rem] shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 active:scale-[0.98] text-white text-left animate-fade-in-up overflow-hidden relative group p-8 lg:p-10 flex flex-col justify-between`}
             style={{ animationDelay: card.delay, minHeight: "260px" }}
